@@ -1,40 +1,98 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const sections = {
-        'about-link': 'about-section',
-        'portfolio-link': 'portfolio-section',
-        'blog-link': 'blog-section',
-        'contact-link': 'contact-section',
-        'talk-link': 'lets-talk-section',
-        'see-projects': 'projects-section',  // This still refers to the Download CV section
-        'hire-me': 'hire-section'
-    };
+/*
+let nav = document.querySelector("nav");
+let scrollBtn = document.querySelector(".scroll-button a");
 
-    Object.keys(sections).forEach(function(linkId) {
-        const link = document.getElementById(linkId);
-        const sectionId = sections[linkId];
-        const section = document.getElementById(sectionId);
-        const closeButton = section.querySelector('.close-btn');
+// Show/hide sticky navigation and scroll button based on scroll position
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 20) {
+    nav.classList.add("sticky");
+    scrollBtn.style.display = "block";
+  } else {
+    nav.classList.remove("sticky");
+    scrollBtn.style.display = "none";
+  }
+};
 
-        // Show the section when the link is clicked
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('body').style.overflow = 'hidden'; // Prevent body scroll
-            section.style.display = 'block'; // Show the section
-        });
+// Side Navigation Menu
+let body = document.querySelector("body");
+let navBar = document.querySelector(".navbar");
+let menuBtn = document.querySelector(".menu-btn");
+let cancelBtn = document.querySelector(".cancel-btn");
 
-        // Close the section when the close button is clicked
-        closeButton.addEventListener('click', function() {
-            section.style.display = 'none'; // Hide the section
-            document.querySelector('body').style.overflow = 'auto'; // Allow body scroll
-        });
+// Open side navigation
+menuBtn.onclick = function () {
+  navBar.classList.add("active");
+  menuBtn.style.opacity = "0";
+  menuBtn.style.pointerEvents = "none";
+  body.style.overflow = "hidden";
+  scrollBtn.style.pointerEvents = "none";
+};
 
-        window.addEventListener('click', function(event) {
-            if (event.target === section) {
-                section.style.display = 'none'; // Hide the section
-                document.querySelector('body').style.overflow = 'auto'; // Allow body scroll
-            }
-        });
-    });
+const hideNavMenu = () => {
+  navBar.classList.remove("active");
+  menuBtn.style.opacity = "1";
+  menuBtn.style.pointerEvents = "auto";
+  body.style.overflow = "auto";
+  scrollBtn.style.pointerEvents = "auto";
+};
+
+// Close side navigation
+cancelBtn.onclick = hideNavMenu;
+
+// Close side navigation when a menu link is clicked
+let navLinks = document.querySelectorAll(".menu li a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", hideNavMenu);
 });
+*/
 
 
+
+
+
+// Sticky Navigation Menu
+let nav = document.querySelector("nav");
+let scrollBtn = document.querySelector(".scroll-button a");
+
+// Show/hide sticky navigation and scroll button based on scroll position
+window.onscroll = function () {
+  if (document.documentElement.scrollTop > 20) {
+    nav.classList.add("sticky");
+    scrollBtn.style.display = "block";
+  } else {
+    nav.classList.remove("sticky");
+    scrollBtn.style.display = "none";
+  }
+};
+
+// Side Navigation Menu
+let body = document.querySelector("body");
+let navBar = document.querySelector(".navbar");
+let menuBtn = document.querySelector(".menu-btn");
+let cancelBtn = document.querySelector(".cancel-btn");
+
+// Open side navigation
+menuBtn.onclick = function () {
+  navBar.classList.add("active");
+  menuBtn.style.opacity = "0";
+  menuBtn.style.pointerEvents = "none";
+  body.style.overflow = "hidden";
+  scrollBtn.style.pointerEvents = "none";
+};
+
+// Close side navigation
+const hideNavMenu = () => {
+  navBar.classList.remove("active");
+  menuBtn.style.opacity = "1";
+  menuBtn.style.pointerEvents = "auto";
+  body.style.overflow = "auto";
+  scrollBtn.style.pointerEvents = "auto";
+};
+
+cancelBtn.onclick = hideNavMenu;
+
+// Close side navigation when a menu link is clicked
+let navLinks = document.querySelectorAll(".menu li a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", hideNavMenu);
+});
