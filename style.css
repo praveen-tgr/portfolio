@@ -97,6 +97,7 @@ nav.sticky .menu a:hover{
  transition: all 0.3s ease;
 }
 
+
 .navbar .media-icons a:hover{
   
   background-color: rgb(161, 210, 230);
@@ -127,14 +128,13 @@ nav.sticky .menu-btn{
 
 /* home section styling */
 .home{
-  height: 100vh;
+  height: 95vh;
   width: 100%;
-  background-color:#ffe2fb;
+ background-size:cover;
   background-image: url("portfolio.imgg.jpg") ;
   background-repeat: no-repeat;
-  background-size: 85%;
-  background-position: right center;
-  background-attachment: scroll;
+  
+  background-attachment:scroll;
   font-family: 'Ubuntu', sans-serif;
   
 }
@@ -145,6 +145,7 @@ nav.sticky .menu-btn{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 27px;
 }
 .home .text-one{
   font-size: 25px;
@@ -204,6 +205,7 @@ section .content{
   justify-content: space-between;
   align-items: center;
 }
+
 section .title{
   display: flex;
   justify-content: center;
@@ -523,7 +525,7 @@ flex-direction: column;
     justify-content: center;
     display: flex;
     gap: 10px;
-   
+    color: white;
   }
   
 }
